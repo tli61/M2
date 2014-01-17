@@ -1,1 +1,78 @@
 This repository is for M2 of CS 2340's project.
+
+Version Control and Build Management Lab
+
+When working in larger teams, it becomes imperative to manage the source code as multiple developers work on it. Additionally, it is important to have a stable, automated build cycle that does not require any human intervention to accomplish. The ultimate goal would be one simple command that would perform the complete build and all associated actions.
+Version Control
+
+There are two primary types of version control systems in use: central repository and distributed. Up until this semester the lab was always based on a central repository versioning system called Subversion. Subversion is still used in many places, but this semester, for M2, we will use a distributed versioning system called Git. After this milestone, for the remainder of the project, you may use the system of your choice.
+
+Git is described in external link: http://git-scm.com/book.
+
+For central project hosting, you may use any service you wish, although github (external link: https://github.com/) is the most popular.
+Setup
+
+While this part is not going to be graded directly, you will not be able to complete the rest of the lab if you omit it.
+
+Setup Git on your machine with the desired client (git for command line, TortiseGit for file manager integration, the git software from github, or EGit for Eclipse integration).
+
+Note
+
+You should name your repository "repository" (if running your own copy of git) If using remote hosting like GitHub, then just provide us the URL and we will check your code out from there.
+
+Initialize a new Git repository. Be sure that your teammates can access the repository also. You will need to work together to complete some portions of this lab. This step is not required if using GitHub hosting
+
+Download the M2 resource file (M2.zip) and unzip it
+
+Import the unzipped files (add, commit and push) as a new project named M2 (Only one person has to do this)
+
+Mark a branch at this point called original.
+
+Each team member should clone out the project M2
+Working with Git
+
+You should work with your Git repository for a bit and in doing so you should complete all of the following tasks at least once:
+Edit and commit files as detailed below.
+
+If you examine the src directory, you will see the files Person1.java Person2.java Person3.java Person4.java Person5.java (located in the edu.gatech.cs2340.antlab.person package)
+
+Each person on the team should choose ONE of these so that everyone is working on a different file.
+
+Now examine your individual file and complete the required method. The javadoc comment will explain what has to be done.
+
+Commit your changes and push back to Git. Now each team member should edit the file edu.gatech.cs2340.antlab.pkg1.AntLabMain.java at the line indicated. You are basically sending your name to the constructor of the class you edited previously. Since you are all editing the same file, you will need to handle any merge requirements yourselves. You might want to get together and commit files to force a merge so you get some practice doing merges. You will run into them during the project.
+Add and remove files
+
+Each team member should add a text file to the top level directory labeled readme.pn.txt where the pn would be p1, p2, p3, p4 or p5 based upon which person you are for the lab. The contents of the file can really be anything, but should include your name, gtnumber and any extra credit you are attempting. Each team member should delete the text file useless.pn.txt where pn is p1,p2, p3, p4 or p5 based on your team member number. Do NOT delete the wrong files!!
+
+Use good descriptive Log comments for your changes/commits
+
+Roll back changes by viewing your original branch from an earlier step. Verify that none of the changes you have made are in the project version you checked out.
+View Git logs. You can do this on github by viewing the blame and graphs provided
+
+View a diff between two versions of a file
+
+Keep playing with git until you feel comfortable. You will probably be using it extensively for the remainder of the semester.
+Build files
+
+Each individual team member will create a build file using gradle that will allow you to perform key tasks to build the application. Name your file with your gtid.gradle for instance: gburdell3.gradle Store your file in the repository,
+
+To run gradle with your file (build.gradle is the default if no file specified) use the -b option, for example: gradle -bgburdell3.gradle
+
+First, each team member should install Gradle onto their machine. Instructions are in the gradle manual at: external link: http://www.gradle.org/
+
+The manual and documentation on the gradle site covers most of the features of gradle. For this lab, we will only be using the most basic of Gradle features and the Java plugin.
+
+You will need to create an executable jar for the project. To do that, you will need to create a manifest. If you are unfamiliar with manifests, then see the official tutorial at: external link: http://docs.oracle.com/javase/tutorial/deployment/jar/
+
+The application you are building also uses packages. You will need to understand how to use packages, as all professional Java projects use them extensively. Again, if you unfamiliar with packages, see the official tutorial at: external link: http://docs.oracle.com/javase/tutorial/java/package/index.html
+
+Your build file should support the following tasks:
+
+compileJava      compiles and builds the project
+compileTest      compiles the unit tests for the project
+javadoc          creates the html documentation for the project
+clean            removes all the files created by this project
+jar              creates the executable jar file for this project
+
+The jar task should be the default if no task is designated when running gradle. Otherwise, gradle will execute the task you request, for example: gradle compileJava will compile your java project.
