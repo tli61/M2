@@ -30,8 +30,17 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+		String output = "";
+		ArrayList<Character> characters = new ArrayList<Character>();
+
+		for (int i = 0; i < input.length(); i++) {
+			characters.add(input.charAt(i));
+		}
+		Collections.shuffle(characters);
+		for (Character a : characters) {
+			output += a;
+		}
+		return output;
 	}
 	/**
 	 * Return a string rep of this object
