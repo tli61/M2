@@ -44,7 +44,8 @@ public class Person3 {
 	private String calc(String input) {
 	  //Person 3 put your implementation here
 		
-		StringBuilder builder = new StringBuilder(input).reverse().toString();
-	  return builder;
+		StringBuilder builder = new StringBuilder(input).reverse();
+		String returnString = builder.toString();
+	  return returnString;
 	}
 }
