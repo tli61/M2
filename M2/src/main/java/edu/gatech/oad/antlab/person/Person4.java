@@ -8,6 +8,9 @@ package edu.gatech.oad.antlab.person;
  *  @author Bob
  *  @version 1.1
  */
+
+
+
 public class Person4 {
   /** Holds the persons real name */
   private String name;
@@ -19,7 +22,7 @@ public class Person4 {
   public Person4(String pname) {
     name = pname;
   }
-    /**
+0    /**
      * This method should return a string
      * where each character is 1 greater 
      * than its previous value.  So
@@ -31,7 +34,12 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 1 put your implementation here
-      return null;
+      char[] charArray = input.toCharArray();
+      for(int i = 0; i<input.length(); i++){
+          charArray[i]= (char)(charArray[i]+1);
+      }
+
+      return String.valueOf(charArray);
     }
     
     /**
@@ -46,5 +54,6 @@ public class Person4 {
       return name + calc(input);
     }
 
+    
 }
 

@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+defaultTasks 'jar'
+
+jar {
+	manifest {
+		attributes 'Main-Class' : 'AntLabMain' , 'Class-Path' : './lib/resources.jar'
+	}
+}
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+dependencies {
+    compile files('./lib/resources.jar')
+}
