@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+defaultTasks 'jar'
+
+jar {
+        manifest {
+                attributes 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain' , 'Class-Path' : '../../lib/resources.jar'
+        }
+}
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories { mavenCentral() }
+dependencies {
+
+    compile files('/lib/resources.jar')
+}
