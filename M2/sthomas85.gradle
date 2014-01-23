@@ -4,11 +4,14 @@ defaultTasks 'jar'
 
 jar {
 	manifest {
-		attributes 'Main-Class' : 'AntLabMain' , 'Class-Path' : './lib/resources.jar'
+		attributes ("Implementation-Title": "Gradle", "Implementation-Version": '1.7', 
+			'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain' , 'Class-Path' : '../../lib/resources.jar')
 	}
 }
 
 
 dependencies {
-    compile files('./lib/resources.jar')
+    compile files('lib/resources.jar')
+	//compile files('src/main/java/edu/gatech/oad/antlab/pkg2/AntLab21.java')
+	//compile files('src/main/java/edu/gatech/oad/antlab/pkg1/AntLabMain.java')
 }
